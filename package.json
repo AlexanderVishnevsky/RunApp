@@ -7,14 +7,16 @@
     "@emotion/styled": "latest",
     "@material-ui/core": "next",
     "@material-ui/icons": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "react-router-dom": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest",
     "typescript": "latest"
   },
   "devDependencies": {
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-router-dom": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "babel-eslint": "latest",
