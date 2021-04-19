@@ -16,7 +16,7 @@ module.exports = {
         'global-require': 0,
         'eslint linebreak-style': [0, 'error', 'windows'],
         semi: ['error', 'always'],
-        'max-lines': ['warn', 500],
+        'max-lines': ['warn', 200],
         'max-lines-per-function': ['warn', 150],
         complexity: ['warn', 5],
         'max-nested-callbacks': ['warn', 2],

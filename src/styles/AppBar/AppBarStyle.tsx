@@ -1,6 +1,5 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Theme } from '@material-ui/core';
 import Layout from '../../components/common/Layout';
-import theme from '../../theme';
 
 /**
  * @see Layout
@@ -10,19 +9,19 @@ import theme from '../../theme';
  * Common styles both for desktop and mobile
  */
 const CommonAppBarStyle = {
-    backgroundColor: theme.palette.primary.main,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 25pt',
 };
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme: Theme) => ({
     /**
      * Unique styles for desktop
      */
     appBarStyle: {
         minHeight: '116px',
+        backgroundColor: theme.palette.primary.main,
         ...CommonAppBarStyle,
     },
     /**
@@ -30,6 +29,7 @@ export const useStyles = makeStyles({
      */
     appBarMobileStyle: {
         minHeight: '77px',
+        backgroundColor: theme.palette.primary.main,
         ...CommonAppBarStyle,
     },
-});
+}));

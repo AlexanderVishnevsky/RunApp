@@ -1,15 +1,32 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Theme } from '@material-ui/core';
 
-export const useStyles = makeStyles({
+export const useStyles = makeStyles((theme: Theme) => ({
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden',
+        width: '100%',
+        height: '100%',
+    },
     layout: {
-        width: '503px',
-        height: '379px',
+        width: '33%',
+        height: '50%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-around',
         alignItems: 'center',
-        backgroundColor: '#e990f9',
+        backgroundColor: theme.palette.secondary.main,
         borderRadius: '44px',
+    },
+    layoutWithoutBackground: {
+        width: '33%',
+        height: '70%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        overflowY: 'auto',
     },
     authButton: {
         width: '151px',
@@ -19,4 +36,4 @@ export const useStyles = makeStyles({
         backgroundColor: 'transparent',
         color: '#FFFFFF',
     },
-});
+}));

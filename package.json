@@ -7,9 +7,9 @@
     "@emotion/styled": "latest",
     "@material-ui/core": "next",
     "@material-ui/icons": "latest",
-    "react-router-dom": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-router-dom": "latest",
     "react-scripts": "latest",
     "typescript": "latest"
   },

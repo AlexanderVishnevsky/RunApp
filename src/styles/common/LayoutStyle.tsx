@@ -1,9 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import Layout from '../../components/common/Layout';
 
-/**
- * @see Layout
- */
 export const useStyles = makeStyles({
     paper: {
         display: 'flex',

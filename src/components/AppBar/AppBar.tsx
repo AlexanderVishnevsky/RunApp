@@ -2,16 +2,79 @@ import { LogoIcon } from '../../static/LogoIcon';
 import { useStyles } from '../../styles/AppBar/AppBarStyle';
 import { MenuIcon } from '../../static/MenuIcon';
 import { AppViewInterface } from '../../interfaces/AppViewInterface';
+import { PagesInterface } from '../../interfaces/PagesInterface';
+import AppBarMenu from './AppBarMenu';
+import React from 'react';
+import FilterJogs from '../Jogs/FilterJogs';
+import { ButtonBase, Collapse } from '@material-ui/core';
+import { useHistory, useLocation } from 'react-router-dom';
 
-const AppBar = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
-    debugger;
+const AppBar = (props: { appView: AppViewInterface }): JSX.Element => {
     const classes = useStyles();
+    const { appView } = props;
+    const [showFilterBar, setShowFilterBar] = React.useState(false);
+    const [activePage, setActivePage] = React.useState<PagesInterface>('jogs');
+    const history = useHistory();
+    const location = useLocation();
+    const [isShowMenu, setShowMenu] = React.useState(false);
+
+    /**
+     * Check what menu to show
+     */
+    React.useEffect(() => {
+        if (localStorage.getItem('access_token')) {
+            setShowMenu(true);
+        } else {
+            // set initial state
+            setShowMenu(false);
+            setShowFilterBar(false);
+            setActivePage('jogs');
+        }
+    }, [location.pathname]);
+
+    const handleToggleFilterBar = () => {
+        setShowFilterBar((prevState: boolean) => !prevState);
+    };
+
+    const handleChangeActivePage = (event: React.SyntheticEvent<Element, Event>, page: PagesInterface) => {
+        history.push(page);
+        setActivePage(page);
+    };
+
+    const renderLoggedInAppBar = (): JSX.Element => (
+        <>
+            <div className={appView === 'mobile' ? classes.appBarMobileStyle : classes.appBarStyle}>
+                <ButtonBase disableTouchRipple disableRipple onClick={() => history.push('/jogs')}>
+                    <LogoIcon />
+                </ButtonBase>
+                {appView === 'mobile' ? (
+                    <MenuIcon />
+                ) : (
+                    <AppBarMenu
+                        activePage={activePage}
+                        handleChangeActivePage={handleChangeActivePage}
+                        handleToggleFilterBar={handleToggleFilterBar}
+                    />
+                )}
+            </div>
+            <Collapse in={showFilterBar}>
+                <FilterJogs showFilterBar={showFilterBar} />
+            </Collapse>
+        </>
+    );
+
     return (
-        <div className={appView === 'mobile' ? classes.appBarMobileStyle : classes.appBarStyle}>
-            <LogoIcon />
-            {/*style={{ width: '28pt' }}*/}
-            {appView === 'mobile' && <MenuIcon />}
-        </div>
+        <>
+            {isShowMenu ? (
+                renderLoggedInAppBar()
+            ) : (
+                <div className={appView === 'mobile' ? classes.appBarMobileStyle : classes.appBarStyle}>
+                    <ButtonBase disableTouchRipple disableRipple onClick={() => history.push('/login')}>
+                        <LogoIcon />
+                    </ButtonBase>
+                </div>
+            )}
+        </>
     );
 };
 export default AppBar;

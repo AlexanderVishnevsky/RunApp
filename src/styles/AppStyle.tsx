@@ -9,6 +9,16 @@ export const useStyles = makeStyles((theme: Theme) =>
             flexDirection: 'column',
             overflow: 'hidden',
         },
+
+        // Класс, который добавляется к элементу при прокрутке
+        onScroll: {
+            '&::-webkit-scrollbar-thumb': {
+                '&:vertical': {
+                    background: '#dedede',
+                },
+            },
+        },
+
         // Scrollbar customization
         '@global': {
             '*::-webkit-scrollbar': {
@@ -23,7 +33,7 @@ export const useStyles = makeStyles((theme: Theme) =>
                 },
 
                 '&:vertical': {
-                    background: '#dedede',
+                    background: 'transparent',
                 },
             },
         },
