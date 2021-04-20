@@ -7,8 +7,9 @@ import { JogListResponseInterface } from '../interfaces/JogListResponseInterface
 import { dateFormatter } from '../api/dateFormatter';
 import SubmitButton from '../components/common/SubmitButton';
 import { RequestStateInterface } from '../interfaces/RequestStateInterface';
+import { AppViewInterface } from '../interfaces/AppViewInterface';
 
-const EditJogPage = (): JSX.Element => {
+const EditJogPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
     const classes = useStyles();
     const history = useHistory();
     const location = useLocation();
@@ -45,7 +46,7 @@ const EditJogPage = (): JSX.Element => {
 
     return (
         <Grow in={true} {...{ timeout: 500 }}>
-            <div className={classes.addNewJogLayout}>
+            <div className={appView === 'desktop' ? classes.addNewJogLayout : classes.addNewJogLayoutMobile}>
                 <div className={classes.divCloseButton}>
                     <div className={classes.closeButton} onClick={() => history.goBack()}>
                         +
@@ -53,32 +54,33 @@ const EditJogPage = (): JSX.Element => {
                 </div>
 
                 <div className={classes.formView}>
-                    <div className={classes.firstRow}>
+                    <div className={appView === 'desktop' ? classes.firstRow : undefined}>
                         <Typography>Distance</Typography>
                         <InputBase
-                            className={classes.textField}
-                            endAdornment={<InputAdornment position="end">Km</InputAdornment>}
+                            className={appView === 'desktop' ? classes.textField : classes.textFieldMobile}
+                            endAdornment={appView === 'desktop' && <InputAdornment position="end">Km</InputAdornment>}
                             type="number"
                             defaultValue={inputsState.distance}
                             onChange={handleChangeField}
                             name={'distance'}
                         />
                     </div>
-                    <div className={classes.firstRow}>
+                    <div className={appView === 'desktop' ? classes.firstRow : undefined}>
                         <Typography>Time</Typography>
                         <InputBase
-                            className={classes.textField}
-                            endAdornment={<InputAdornment position="end">Min</InputAdornment>}
+                            className={appView === 'desktop' ? classes.textField : classes.textFieldMobile}
+                            endAdornment={appView === 'desktop' && <InputAdornment position="end">Min</InputAdornment>}
                             type="number"
                             defaultValue={inputsState.time}
                             onChange={handleChangeField}
                             name={'time'}
                         />
                     </div>
-                    <div className={classes.firstRow}>
+                    <div className={appView === 'desktop' ? classes.firstRow : undefined}>
                         <Typography>Date</Typography>
                         <InputBase
-                            className={classes.textField}
+                            className={appView === 'desktop' ? classes.textField : classes.textFieldMobile}
+                            endAdornment={appView === 'desktop' && <InputAdornment position="end">Date</InputAdornment>}
                             defaultValue={inputsState.date}
                             onChange={handleChangeField}
                             name={'date'}

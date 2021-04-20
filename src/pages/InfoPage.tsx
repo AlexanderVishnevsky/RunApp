@@ -1,13 +1,14 @@
 import { Grow, Typography } from '@material-ui/core';
 import React from 'react';
 import { useStyles } from '../styles/pages/AuthPageStyle';
+import { AppViewInterface } from '../interfaces/AppViewInterface';
 
-const InfoPage = (): JSX.Element => {
+const InfoPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
     const classes = useStyles();
     return (
         <Grow in={true} {...{ timeout: 500 }}>
             <div className={classes.root}>
-                <div className={classes.layoutWithoutBackground}>
+                <div className={appView == 'desktop' ? classes.layoutWithoutBackground : classes.readableLayoutMobile}>
                     <Typography color={'primary'} variant={'h3'}>
                         INFO
                     </Typography>

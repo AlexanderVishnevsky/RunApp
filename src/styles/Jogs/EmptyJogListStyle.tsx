@@ -10,4 +10,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
         maxWidth: '249px',
         alignItems: 'center',
     },
+    smileDiv: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
 }));

@@ -23,3 +23,27 @@ export const AntTab = withStyles((theme: Theme) =>
         },
     }),
 )((props: StyledTabProps) => <Tab disableRipple {...props} />);
+
+export const MobileTabs = withStyles({
+    root: {
+        width: '100%',
+        height: '100%',
+    },
+    flexContainerVertical: { alignItems: 'center', justifyContent: 'space-around', height: '40%' },
+    indicator: {
+        backgroundColor: '#FFFFFF',
+        color: '#FFFFFF',
+    },
+})(Tabs);
+
+export const MobileTab = withStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            textTransform: 'uppercase',
+            fontSize: '25pt',
+            minWidth: 0,
+            alignItems: 'center',
+            // marginRight: theme.spacing(3),
+        },
+    }),
+)((props: StyledTabProps) => <Tab disableRipple {...props} />);

@@ -1,5 +1,13 @@
 import { makeStyles, Theme } from '@material-ui/core';
 
+const CommonLayoutStyle = {
+    width: '33%',
+    height: '50%',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+};
+
 export const useStyles = makeStyles((theme: Theme) => ({
     root: {
         display: 'flex',
@@ -10,15 +18,20 @@ export const useStyles = makeStyles((theme: Theme) => ({
         width: '100%',
         height: '100%',
     },
+
     layout: {
-        width: '33%',
-        height: '50%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
         backgroundColor: theme.palette.secondary.main,
         borderRadius: '44px',
+        flexDirection: 'column',
+        ...CommonLayoutStyle,
+    },
+    layoutMobile: {
+        flexDirection: 'column',
+        ...CommonLayoutStyle,
+    },
+    readableLayoutMobile: {
+        padding: '24pt',
+        height: 'inherit',
     },
     layoutWithoutBackground: {
         width: '33%',

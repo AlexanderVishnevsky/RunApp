@@ -3,7 +3,7 @@ import { AppViewInterface } from './interfaces/AppViewInterface';
 import { useStyles } from './styles/AppStyle';
 import Layout from './components/common/Layout';
 import AppBar from './components/AppBar/AppBar';
-import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import JogsPage from './pages/JogsPage';
 import AddNewJogPage from './pages/AddNewJogPage';
@@ -47,7 +47,9 @@ const App = (): JSX.Element => {
             <div className={classes.layout}>
                 <AppBar appView={appView} filterInterval={filterInterval} setFilterInterval={setFilterInterval} />
                 <Switch>
-                    <Route path="/login" component={AuthPage} />
+                    <Route path="/login">
+                        <AuthPage appView={appView} />
+                    </Route>
                     <Route
                         path="/"
                         render={() => (
@@ -55,10 +57,18 @@ const App = (): JSX.Element => {
                                 <Route path="/jogs" exact>
                                     <JogsPage filterInterval={filterInterval} />
                                 </Route>
-                                <Route path="/jogs/add" component={AddNewJogPage} />
-                                <Route path="/jogs/edit" component={EditJogPage} />
-                                <Route path="/info" component={InfoPage} />
-                                <Route path="/contactus" component={AboutPage} />
+                                <Route path="/jogs/add">
+                                    <AddNewJogPage appView={appView} />
+                                </Route>
+                                <Route path="/jogs/edit">
+                                    <EditJogPage appView={appView} />
+                                </Route>
+                                <Route path="/info">
+                                    <InfoPage appView={appView} />
+                                </Route>
+                                <Route path="/contactus">
+                                    <AboutPage appView={appView} />
+                                </Route>
                             </Layout>
                         )}
                     />

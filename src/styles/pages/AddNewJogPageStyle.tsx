@@ -10,6 +10,15 @@ export const useStyles = makeStyles((theme: Theme) => ({
         borderRadius: '44px',
         padding: '0 24px 24px',
     },
+    addNewJogLayoutMobile: {
+        width: '80%',
+        height: '50%',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: theme.palette.primary.main,
+        borderRadius: '44px',
+        padding: '0 35px 37px',
+    },
     divCloseButton: {
         display: 'flex',
         justifyContent: 'flex-end',
@@ -43,5 +52,13 @@ export const useStyles = makeStyles((theme: Theme) => ({
         padding: '0px 20px',
         width: '70%',
         marginLeft: '10px',
+    },
+    textFieldMobile: {
+        backgroundColor: theme.palette.background.paper,
+        height: '31pt',
+        borderRadius: '11px',
+        border: '1px solid #979797',
+        padding: '0px 10px',
+        width: '100%',
     },
 }));

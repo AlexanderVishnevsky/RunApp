@@ -2,7 +2,8 @@ import { makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles({
     authButton: {
-        height: '40px',
+        minHeight: '40pt',
+        maxHeight: '60pt',
         borderRadius: '36px',
         border: 'solid 3px #ffffff',
         backgroundColor: 'transparent',

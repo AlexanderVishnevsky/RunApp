@@ -27,4 +27,23 @@ export const useStyles = makeStyles((theme: Theme) => ({
         backgroundColor: theme.palette.primary.main,
         ...CommonAppBarStyle,
     },
+
+    appBarMobileMenuStyle: {
+        minHeight: '77px',
+        backgroundColor: theme.palette.background.paper,
+        ...CommonAppBarStyle,
+    },
+
+    divCloseButton: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+    },
+    closeButton: {
+        fontSize: '37px',
+        color: 'rgb(176, 171, 171)',
+        transform: 'rotate(-45deg)',
+        '&:hover': {
+            cursor: 'pointer',
+        },
+    },
 }));

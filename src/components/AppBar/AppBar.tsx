@@ -1,6 +1,5 @@
 import { LogoIcon } from '../../static/LogoIcon';
 import { useStyles } from '../../styles/AppBar/AppBarStyle';
-import { MenuIcon } from '../../static/MenuIcon';
 import { AppViewInterface } from '../../interfaces/AppViewInterface';
 import { PagesInterface } from '../../interfaces/PagesInterface';
 import AppBarMenu from './AppBarMenu';
@@ -22,9 +21,10 @@ const AppBar = (props: {
     const history = useHistory();
     const location = useLocation();
     const [isShowMenu, setShowMenu] = React.useState(false);
+    const [isShowMobileMenu, setIsShowMobileMenu] = React.useState(false);
 
     /**
-     * Check what menu to show
+     * Check what to show
      */
     React.useEffect(() => {
         if (localStorage.getItem('access_token')) {
@@ -68,6 +68,13 @@ const AppBar = (props: {
         setShowFilterBar((prevState: boolean) => !prevState);
     };
 
+    const handleToggleMobileMenu = () => {
+        if (isShowMobileMenu) {
+            props.setFilterInterval({ dateFrom: '', dateTo: '' });
+        }
+        setIsShowMobileMenu((prevState: boolean) => !prevState);
+    };
+
     const handleChangeActivePage = (event: React.SyntheticEvent<Element, Event>, page: PagesInterface) => {
         history.push(page);
         props.setFilterInterval({ dateFrom: '', dateTo: '' });
@@ -80,15 +87,14 @@ const AppBar = (props: {
                 <ButtonBase disableTouchRipple disableRipple onClick={() => history.push('/jogs')}>
                     <LogoIcon />
                 </ButtonBase>
-                {appView === 'mobile' ? (
-                    <MenuIcon />
-                ) : (
-                    <AppBarMenu
-                        activePage={activePage}
-                        handleChangeActivePage={handleChangeActivePage}
-                        handleToggleFilterBar={handleToggleFilterBar}
-                    />
-                )}
+                <AppBarMenu
+                    appView={appView}
+                    activePage={activePage}
+                    handleChangeActivePage={handleChangeActivePage}
+                    handleToggleFilterBar={handleToggleFilterBar}
+                    isShowMobileMenu={isShowMobileMenu}
+                    handleToggleMobileMenu={handleToggleMobileMenu}
+                />
             </div>
             <Collapse in={showFilterBar}>
                 <FilterJogs showFilterBar={showFilterBar} {...props} />

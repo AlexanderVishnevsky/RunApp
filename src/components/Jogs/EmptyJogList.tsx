@@ -11,10 +11,12 @@ const EmptyJogList = () => {
     const classes = useStyles();
     return (
         <div className={classes.emptyJogListLayout}>
-            <div>
+            <div className={classes.smileDiv}>
                 <SadSmileIcon />
                 <br />
-                <Typography variant={'h5'}>Nothing is there</Typography>
+                <Typography variant={'h3'} style={{ color: '#B0B0B0' }}>
+                    Nothing is there
+                </Typography>
             </div>
             <SubmitButton
                 onClick={() => history.push('/jogs/add')}
