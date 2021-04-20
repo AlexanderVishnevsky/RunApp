@@ -7,11 +7,14 @@
 
 [![Yellow](https://img.shields.io/badge/DEMO%20APP-Yellow-yellow?style=for-the-badge&logo=circle?link=https://yellow.systems)](https://yellow.systems/)
 
-<hr style="border:1px solid rgb(255, 191, 2)"/>
-
 SPA app for jogging
 
 <br/>
+
+<hr style="border:1px solid #ffbf02"/>
+
+
+
 
 <div align="left">
 
