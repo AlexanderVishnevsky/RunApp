@@ -1,46 +1,56 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![jogging](public/jogging.png)
 
-## Available Scripts
+  <h1>Jogging tracker</h1>
+    <br/>
 
-In the project directory, you can run:
+[![Yellow](https://img.shields.io/badge/DEMO%20APP-Yellow-yellow?style=for-the-badge&logo=circle?link=https://yellow.systems)](https://yellow.systems/)
 
-### `npm start`
+<hr style="border:1px solid rgb(255, 191, 2)"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+SPA app for jogging
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br/>
 
-### `npm test`
+<div align="left">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run Project 🚀
 
-### `npm run build`
+```text
+npm run start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div align="left">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features ⚡
 
-### `npm run eject`
+-   Login to the App with Token
+-   Watch all jogs
+-   Adding Jogs
+-   Edit current jog
+-   Filtering jogs by date
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## What can be improved 📈
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   [ ] Session TOKEN expiration mechanism
+-   [ ] Filter by partial match
+-   [ ] Strict date validation
+-   [ ] Add more functionality to the App
+-   [ ] Update app to SSR for page load optimization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technical Info 📃
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   <a href="https://www.typescriptlang.org/"> Typescript</a> for code writing 🖤
+-   <a href="https://eslint.org/">Eslint</a> & <a href="https://prettier.io/">Prettier</a> for code styling
+-   <a href="https://material-ui.com/">Material-UI</a> for styling
+-   Use REST API for fetching data
 
-## Learn More
+## Won't done 🙅‍♂️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   Pure CSS styling
+-   Tests 😥
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</div>
