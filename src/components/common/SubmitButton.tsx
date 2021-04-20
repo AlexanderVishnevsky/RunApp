@@ -12,7 +12,7 @@ const SubmitButton = ({
     onClick: () => void;
     label: string;
     processRequestState: RequestStateInterface;
-    style?: Record<string, any>;
+    style?: Record<string, string | number>;
 }): JSX.Element => {
     const classes = useStyles();
 

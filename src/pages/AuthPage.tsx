@@ -30,6 +30,7 @@ const AuthPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
                 setProcessRequestState('initial');
             })
             .catch((e: Error) => {
+                console.error('auth error', e.message);
                 setProcessRequestState('error');
             });
     };
