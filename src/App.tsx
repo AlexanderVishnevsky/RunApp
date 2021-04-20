@@ -3,7 +3,7 @@ import { AppViewInterface } from './interfaces/AppViewInterface';
 import { useStyles } from './styles/AppStyle';
 import Layout from './components/common/Layout';
 import AppBar from './components/AppBar/AppBar';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import AuthPage from './pages/AuthPage';
 import JogsPage from './pages/JogsPage';
 import AddNewJogPage from './pages/AddNewJogPage';
@@ -54,6 +54,7 @@ const App = (): JSX.Element => {
                         path="/"
                         render={() => (
                             <Layout>
+                                <Route exact path="/" render={() => <Redirect to="/login" />} />
                                 <Route path="/jogs" exact>
                                     <JogsPage filterInterval={filterInterval} />
                                 </Route>
