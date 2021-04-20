@@ -31,7 +31,7 @@ const SubmitButton = ({
                     }}
                     unmountOnExit
                 >
-                    <CircularProgress className={classes.preloader} />
+                    <CircularProgress color={'inherit'} />
                 </Fade>
             ) : processRequestState === 'error' ? (
                 'Try again'
