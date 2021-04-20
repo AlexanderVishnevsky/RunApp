@@ -10,13 +10,6 @@ export const useStyles = makeStyles({
         color: '#FFFFFF',
     },
 
-    preloader: {
-        color: '#FFFFFF',
-        // width: '60px',
-        // height: '60px',
-        // borderRadius: '36px',
-    },
-
     authButtonLoading: {
         width: '1px',
         borderRadius: '36px',
@@ -24,9 +17,6 @@ export const useStyles = makeStyles({
         backgroundColor: 'transparent',
         color: '#FFFFFF',
         animation: '$move 0.5s linear',
-        '&:disabled': {
-            border: '3px solid rgba(0, 0, 0, 0.26)',
-        },
     },
     '@keyframes move': {
         '0%': {

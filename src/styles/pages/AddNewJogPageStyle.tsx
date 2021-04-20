@@ -12,12 +12,12 @@ export const useStyles = makeStyles((theme: Theme) => ({
     },
     addNewJogLayoutMobile: {
         width: '80%',
-        height: '50%',
+        height: '60%',
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: theme.palette.primary.main,
         borderRadius: '44px',
-        padding: '0 35px 37px',
+        padding: '0 35pt 37pt',
     },
     divCloseButton: {
         display: 'flex',
@@ -37,7 +37,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         height: '100%',
-        paddingBottom: '18px',
+        paddingBottom: '10pt',
+        overflow: 'auto',
     },
     firstRow: {
         display: 'flex',
