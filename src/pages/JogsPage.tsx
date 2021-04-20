@@ -36,7 +36,8 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
                 }
                 setLoadingJogList(false);
             })
-            .catch((e) => {
+            .catch((e: Error) => {
+                console.error('getData()', e.message);
                 setLoadingJogList(false);
             });
     }, []);
