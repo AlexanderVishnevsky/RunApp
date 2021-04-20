@@ -5,7 +5,7 @@ import { SadSmileIcon } from '../../static/SadSmileIcon';
 import SubmitButton from '../common/SubmitButton';
 import { useStyles } from '../../styles/Jogs/EmptyJogListStyle';
 
-const EmptyJogList = () => {
+const EmptyJogList = (): JSX.Element => {
     const history = useHistory();
     const theme = useTheme();
     const classes = useStyles();

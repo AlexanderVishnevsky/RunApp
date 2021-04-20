@@ -21,26 +21,27 @@ const App = (): JSX.Element => {
     });
 
     React.useEffect(() => {
-        checkScreenSize();
-        const handleScroll = (e: any): void => {
-            const classList = e.target.classList;
-            const className = classes.onScroll;
-
-            if (classList && !classList.contains(className)) {
-                classList.add(className);
-
-                setTimeout(() => e.target.classList.remove(className), 3000);
-            }
+        const checkScreenSize = () => {
+            const width = window.innerWidth;
+            return width < 728 ? setAppView('mobile') : setAppView('desktop');
         };
-        window.addEventListener('scroll', handleScroll, true);
+        // const handleScroll = (e: any): void => {
+        //     const classList = e.target.classList;
+        //     const className = classes.onScroll;
+        //
+        //     if (classList && !classList.contains(className)) {
+        //         classList.add(className);
+        //
+        //         setTimeout(() => e.target.classList.remove(className), 3000);
+        //     }
+        // };
+        // window.addEventListener('scroll', handleScroll, true);
         window.addEventListener('resize', checkScreenSize);
-        return () => window.removeEventListener('resize', checkScreenSize);
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+            // window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
-
-    const checkScreenSize = () => {
-        const width = window.innerWidth;
-        return width < 728 ? setAppView('mobile') : setAppView('desktop');
-    };
 
     return (
         <BrowserRouter>

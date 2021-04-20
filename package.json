@@ -5,7 +5,7 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
-    "@material-ui/core": "next",
+    "@material-ui/core": "^5.0.0-alpha.31",
     "@material-ui/icons": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -23,17 +23,17 @@
     "eslint": "latest",
     "eslint-config-prettier": "^8.2.0",
     "eslint-config-react-app": "latest",
-    "eslint-plugin-flowtype": "latest",
+    "eslint-plugin-flowtype": "^5.7.1",
     "eslint-plugin-import": "latest",
     "eslint-plugin-jsx-a11y": "latest",
-    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "latest",
     "prettier": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "set \"CI=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "tsc --noEmit && eslint --ext .ts,.tsx ./ --quiet --fix --ignore-pattern node_modules"

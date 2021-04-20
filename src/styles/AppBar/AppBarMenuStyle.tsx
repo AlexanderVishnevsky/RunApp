@@ -36,14 +36,13 @@ export const MobileTabs = withStyles({
     },
 })(Tabs);
 
-export const MobileTab = withStyles((theme: Theme) =>
+export const MobileTab = withStyles(() =>
     createStyles({
         root: {
             textTransform: 'uppercase',
             fontSize: '25pt',
             minWidth: 0,
             alignItems: 'center',
-            // marginRight: theme.spacing(3),
         },
     }),
 )((props: StyledTabProps) => <Tab disableRipple {...props} />);
