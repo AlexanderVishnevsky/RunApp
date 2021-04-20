@@ -1,1 +1,1 @@
-export type PagesInterface = 'jogs' | 'info' | 'contactus' | 'add';
+export type PagesInterface = 'jogs' | 'info' | 'contactus' | '/jogs/add' | '/jogs/edit' | '';

@@ -8,8 +8,13 @@ import React from 'react';
 import FilterJogs from '../Jogs/FilterJogs';
 import { ButtonBase, Collapse } from '@material-ui/core';
 import { useHistory, useLocation } from 'react-router-dom';
+import { filterIntervalInterface } from '../../interfaces/filterIntervalInterface';
 
-const AppBar = (props: { appView: AppViewInterface }): JSX.Element => {
+const AppBar = (props: {
+    appView: AppViewInterface;
+    filterInterval: filterIntervalInterface;
+    setFilterInterval: React.Dispatch<React.SetStateAction<filterIntervalInterface>>;
+}): JSX.Element => {
     const classes = useStyles();
     const { appView } = props;
     const [showFilterBar, setShowFilterBar] = React.useState(false);
@@ -30,14 +35,42 @@ const AppBar = (props: { appView: AppViewInterface }): JSX.Element => {
             setShowFilterBar(false);
             setActivePage('jogs');
         }
+        switch (location.pathname) {
+            case '/jogs/add': {
+                setShowFilterBar(false);
+                setActivePage('');
+                break;
+            }
+            case '/jogs/edit': {
+                setShowFilterBar(false);
+                setActivePage('');
+                break;
+            }
+            case '/jogs': {
+                setActivePage('jogs');
+                break;
+            }
+            case '/info': {
+                setShowFilterBar(false);
+                break;
+            }
+            case '/contactus': {
+                setShowFilterBar(false);
+                break;
+            }
+        }
     }, [location.pathname]);
 
     const handleToggleFilterBar = () => {
+        if (showFilterBar) {
+            props.setFilterInterval({ dateFrom: '', dateTo: '' });
+        }
         setShowFilterBar((prevState: boolean) => !prevState);
     };
 
     const handleChangeActivePage = (event: React.SyntheticEvent<Element, Event>, page: PagesInterface) => {
         history.push(page);
+        props.setFilterInterval({ dateFrom: '', dateTo: '' });
         setActivePage(page);
     };
 
@@ -58,7 +91,7 @@ const AppBar = (props: { appView: AppViewInterface }): JSX.Element => {
                 )}
             </div>
             <Collapse in={showFilterBar}>
-                <FilterJogs showFilterBar={showFilterBar} />
+                <FilterJogs showFilterBar={showFilterBar} {...props} />
             </Collapse>
         </>
     );

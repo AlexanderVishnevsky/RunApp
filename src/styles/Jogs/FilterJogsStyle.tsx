@@ -18,7 +18,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
         borderRadius: '11px',
         border: '1px solid #979797',
         padding: '0px 20px',
-        maxWidth: '100px',
+        maxWidth: 'fit-content',
         marginLeft: '10px',
     },
     firstRow: {

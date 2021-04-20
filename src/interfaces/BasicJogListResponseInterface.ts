@@ -4,5 +4,5 @@
 export interface BasicJogListResponseInterface {
     distance: number;
     time: number;
-    date: string;
+    date: string | number;
 }

@@ -1,6 +1,6 @@
 import { useStyles } from '../../styles/Jogs/JogItemStyle';
 import React from 'react';
-import { Skeleton, Avatar, Grow } from '@material-ui/core';
+import { Avatar, Grow, Skeleton } from '@material-ui/core';
 
 /**
  * Preloader skeleton list for JogList

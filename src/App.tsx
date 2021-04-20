@@ -10,14 +10,20 @@ import AddNewJogPage from './pages/AddNewJogPage';
 import InfoPage from './pages/InfoPage';
 import AboutPage from './pages/AboutPage';
 import EditJogPage from './pages/EditJogPage';
+import { dateFormatter } from './api/dateFormatter';
+import { filterIntervalInterface } from './interfaces/filterIntervalInterface';
 
 const App = (): JSX.Element => {
     const classes = useStyles();
     const [appView, setAppView] = React.useState<AppViewInterface>('desktop');
+    const [filterInterval, setFilterInterval] = React.useState<filterIntervalInterface>({
+        dateFrom: '',
+        dateTo: '',
+    });
 
     React.useEffect(() => {
         checkScreenSize();
-        const handleScroll = (e: any) => {
+        const handleScroll = (e: any): void => {
             const classList = e.target.classList;
             const className = classes.onScroll;
 
@@ -40,14 +46,16 @@ const App = (): JSX.Element => {
     return (
         <BrowserRouter>
             <div className={classes.layout}>
-                <AppBar appView={appView} />
+                <AppBar appView={appView} filterInterval={filterInterval} setFilterInterval={setFilterInterval} />
                 <Switch>
                     <Route path="/login" component={AuthPage} />
                     <Route
                         path="/"
                         render={() => (
                             <Layout>
-                                <Route path="/jogs" component={JogsPage} exact />
+                                <Route path="/jogs" exact>
+                                    <JogsPage filterInterval={filterInterval} />
+                                </Route>
                                 <Route path="/jogs/add" component={AddNewJogPage} />
                                 <Route path="/jogs/edit" component={EditJogPage} />
                                 <Route path="/info" component={InfoPage} />

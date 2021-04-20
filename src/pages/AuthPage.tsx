@@ -1,4 +1,4 @@
-import { Button, Grow } from '@material-ui/core';
+import { Grow } from '@material-ui/core';
 import { BearFaceIcon } from '../static/BearFaceIcon';
 import { useStyles } from '../styles/pages/AuthPageStyle';
 import { Redirect, useHistory } from 'react-router-dom';
@@ -42,6 +42,7 @@ const AuthPage = (): JSX.Element => {
                         }}
                         label={'Let me in'}
                         processRequestState={processRequestState}
+                        style={{ width: '150px', height: '40px' }}
                     />
                 </div>
             </div>

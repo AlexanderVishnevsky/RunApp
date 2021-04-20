@@ -1,7 +1,16 @@
 import JogItem from './JogItem';
 import { useStyles } from '../../styles/Jogs/JogListStyle';
 import { JogListResponseInterface } from '../../interfaces/JogListResponseInterface';
+import React from 'react';
 
+/**
+ * List of jogs
+ * -------------
+ * @Important
+ * index in map used olly for animations
+ * for key used jog_id: number;
+ * @param jogList
+ */
 const JogList = ({ jogList }: { jogList: JogListResponseInterface[] }): JSX.Element => {
     const classes = useStyles();
     return (

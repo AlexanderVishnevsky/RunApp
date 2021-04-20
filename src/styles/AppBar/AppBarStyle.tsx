@@ -1,9 +1,4 @@
 import { makeStyles, Theme } from '@material-ui/core';
-import Layout from '../../components/common/Layout';
-
-/**
- * @see Layout
- */
 
 /**
  * Common styles both for desktop and mobile

@@ -1,4 +1,4 @@
-import { Button, Typography, InputBase, Grow, InputAdornment } from '@material-ui/core';
+import { Grow, InputAdornment, InputBase, Typography } from '@material-ui/core';
 import { useStyles } from '../styles/pages/AddNewJogPageStyle';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useRequest } from '../api/useRequest';
@@ -21,11 +21,17 @@ const EditJogPage = (): JSX.Element => {
     const [processRequestState, setProcessRequestState] = React.useState<RequestStateInterface>('initial');
 
     const handleChangeField = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputsState({ ...inputsState, [e.target.name]: e.target.value });
+        try {
+            setInputsState({ ...inputsState, [e.target.name]: e.target.value });
+        } catch (e) {
+            console.warn('Unable to set values');
+        }
     };
 
     const submitForm = () => {
-        const convertedDate = dateFormatter().FromStringToDate(inputsState.date).toString();
+        const convertedDate: string = dateFormatter()
+            .FromStringToDate(inputsState.date as string)
+            .toString();
         setProcessRequestState('loading');
         editData({ ...inputsState, date: convertedDate }).then((response: string) => {
             if (response === 'success') {
@@ -41,7 +47,7 @@ const EditJogPage = (): JSX.Element => {
         <Grow in={true} {...{ timeout: 500 }}>
             <div className={classes.addNewJogLayout}>
                 <div className={classes.divCloseButton}>
-                    <div className={classes.closeButton} onClick={() => history.push('/jogs')}>
+                    <div className={classes.closeButton} onClick={() => history.goBack()}>
                         +
                     </div>
                 </div>
@@ -82,7 +88,7 @@ const EditJogPage = (): JSX.Element => {
                         onClick={submitForm}
                         label={'Save'}
                         processRequestState={processRequestState}
-                        size={{ width: '70%', height: '60px' }}
+                        style={{ width: '70%', height: '60px' }}
                     />
                 </div>
             </div>

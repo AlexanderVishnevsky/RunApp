@@ -1,6 +1,6 @@
-import { makeStyles, Theme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const useStyles = makeStyles({
     jogItemLayout: {
         display: 'flex',
         marginBottom: '40px',
@@ -22,4 +22,4 @@ export const useStyles = makeStyles((theme: Theme) => ({
         marginBottom: '40px',
         width: '100%',
     },
-}));
+});

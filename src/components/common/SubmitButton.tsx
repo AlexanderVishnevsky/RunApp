@@ -7,13 +7,13 @@ const SubmitButton = ({
     onClick,
     label,
     processRequestState,
-    size = { width: '150px', height: '40px' },
+    style,
 }: {
     onClick: () => void;
     label: string;
     processRequestState: RequestStateInterface;
-    size?: { width: number | string; height: number | string };
-}) => {
+    style?: Record<string, any>;
+}): JSX.Element => {
     const classes = useStyles();
 
     return (
@@ -21,7 +21,7 @@ const SubmitButton = ({
             className={processRequestState === 'loading' ? classes.authButtonLoading : classes.authButton}
             onClick={onClick}
             disabled={processRequestState === 'loading'}
-            style={{ width: size.width, height: size.height }}
+            style={style}
         >
             {processRequestState === 'loading' ? (
                 <Fade

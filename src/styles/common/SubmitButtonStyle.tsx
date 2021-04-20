@@ -1,6 +1,6 @@
-import { makeStyles, Theme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const useStyles = makeStyles({
     authButton: {
         height: '40px',
         borderRadius: '36px',
@@ -41,4 +41,4 @@ export const useStyles = makeStyles((theme: Theme) => ({
             border: '3px solid transparent',
         },
     },
-}));
+});

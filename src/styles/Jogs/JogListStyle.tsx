@@ -1,6 +1,6 @@
-import { makeStyles, Theme } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme: Theme) => ({
+export const useStyles = makeStyles({
     jogListLayout: {
         display: 'flex',
         flexDirection: 'column',
@@ -9,4 +9,4 @@ export const useStyles = makeStyles((theme: Theme) => ({
         overflowY: 'auto',
         scrollBehavior: 'smooth',
     },
-}));
+});
