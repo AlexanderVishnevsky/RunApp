@@ -50,7 +50,6 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
             });
         }
         if (filterInterval.dateTo !== '') {
-            debugger;
             const UNIXEndDate = dateFormatter().FromStringToUnix(filterInterval.dateTo);
             tempArr = tempArr.filter((item: JogListResponseInterface) => {
                 return filterInterval.dateTo !== '' && item.date <= UNIXEndDate;
@@ -60,13 +59,10 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
     };
 
     React.useEffect(() => {
-        debugger;
         if (filterInterval.dateFrom.length === 10 || filterInterval.dateTo.length === 10) {
             const res = checkFilterInterval(initialResArray);
-            debugger;
             setJogList(res);
         } else if (filterInterval.dateFrom.length === 0 && filterInterval.dateTo.length === 0) {
-            debugger;
             setJogList(initialResArray);
         }
     }, [filterInterval]);

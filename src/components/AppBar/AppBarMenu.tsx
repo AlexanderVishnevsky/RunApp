@@ -18,9 +18,9 @@ const AppBarMenu = ({
     return (
         <div style={{ display: 'flex' }}>
             <AntTabs value={activePage} onChange={handleChangeActivePage} textColor="inherit">
-                <AntTab label="jogs" value={'jogs'} />
-                <AntTab label="info" value={'info'} />
-                <AntTab label="contact us" value={'contactus'} />
+                <AntTab label="jogs" value={'/jogs'} />
+                <AntTab label="info" value={'/info'} />
+                <AntTab label="contact us" value={'/contactus'} />
             </AntTabs>
             <IconButton
                 onClick={handleToggleFilterBar}

@@ -18,7 +18,7 @@ const AppBar = (props: {
     const classes = useStyles();
     const { appView } = props;
     const [showFilterBar, setShowFilterBar] = React.useState(false);
-    const [activePage, setActivePage] = React.useState<PagesInterface>('jogs');
+    const [activePage, setActivePage] = React.useState<PagesInterface>('/jogs');
     const history = useHistory();
     const location = useLocation();
     const [isShowMenu, setShowMenu] = React.useState(false);
@@ -33,7 +33,7 @@ const AppBar = (props: {
             // set initial state
             setShowMenu(false);
             setShowFilterBar(false);
-            setActivePage('jogs');
+            setActivePage('/jogs');
         }
         switch (location.pathname) {
             case '/jogs/add': {
@@ -47,7 +47,7 @@ const AppBar = (props: {
                 break;
             }
             case '/jogs': {
-                setActivePage('jogs');
+                setActivePage('/jogs');
                 break;
             }
             case '/info': {

@@ -26,7 +26,9 @@ const AddNewJogPage = (): JSX.Element => {
     };
 
     const addNewJog = () => {
-        const convertedDate: string = dateFormatter().FromStringToDate(inputsState.date).toString();
+        const convertedDate: string = dateFormatter()
+            .FromStringToDate(inputsState.date as string)
+            .toString();
         addData({ ...inputsState, date: convertedDate }).then((response: string) => {
             if (response === 'success') {
                 history.push('/jogs');

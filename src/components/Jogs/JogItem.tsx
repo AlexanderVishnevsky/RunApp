@@ -28,10 +28,16 @@ const JogItem = ({ item, index }: { item: JogListResponseInterface; index: numbe
                     <RunIcon />
                 </div>
                 <div>
-                    <Typography>{dateFormatter().FromUnixToString(item.date)}</Typography>
-                    <Typography>Speed: {formattedSpeed} km/h</Typography>
-                    <Typography>Distance: {item.distance} km</Typography>
-                    <Typography>Time: {item.time} min</Typography>
+                    <Typography variant={'subtitle2'}>{dateFormatter().FromUnixToString(item.date)}</Typography>
+                    <Typography variant={'body1'}>
+                        <b>Speed:</b> {formattedSpeed}
+                    </Typography>
+                    <Typography variant={'body1'}>
+                        <b>Distance:</b> {item.distance} km
+                    </Typography>
+                    <Typography variant={'body1'}>
+                        <b>Time:</b> {item.time} min
+                    </Typography>
                 </div>
             </div>
         </Slide>
