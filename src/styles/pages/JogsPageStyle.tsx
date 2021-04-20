@@ -32,4 +32,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
             boxShadow: 'none',
         },
     },
+    plus: {
+        fontSize: '46px',
+    },
 }));

@@ -96,7 +96,9 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
                                             history.push('/jogs/add');
                                         }}
                                     >
-                                        <Typography variant={'h3'}> + </Typography>
+                                        <Typography variant={'h3'} className={classes.plus}>
+                                            <b>+</b>
+                                        </Typography>
                                     </Fab>
                                 </Zoom>
                             </div>
