@@ -1,5 +1,5 @@
 import JogList from '../components/Jogs/JogList';
-import { Fab, Typography, useTheme, Zoom } from '@material-ui/core';
+import { Box, Fab, Typography, useTheme, Zoom } from '@material-ui/core';
 import { useStyles } from '../styles/pages/JogsPageStyle';
 import { useHistory, useLocation } from 'react-router-dom';
 import React from 'react';
@@ -77,16 +77,20 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
                     <>
                         {jogList.length !== 0 ? <JogList jogList={jogList} /> : <EmptyJogList />}
                         {jogList.length !== 0 && (
-                            <div className={classes.addJogButton}>
-                                <Zoom
-                                    in={location.pathname !== 'jogs'}
-                                    timeout={transitionDuration}
-                                    style={{
-                                        transitionDelay: `${
-                                            location.pathname !== 'jogs' ? transitionDuration.exit : 0
-                                        }ms`,
+                            <Zoom
+                                in={location.pathname !== 'jogs'}
+                                timeout={transitionDuration}
+                                style={{
+                                    transitionDelay: `${location.pathname !== 'jogs' ? transitionDuration.exit : 0}ms`,
+                                }}
+                                unmountOnExit
+                            >
+                                <Box
+                                    onClick={() => {
+                                        history.push('/jogs/add');
                                     }}
-                                    unmountOnExit
+                                    role="presentation"
+                                    sx={{ position: 'fixed', bottom: '16pt', right: '16pt' }}
                                 >
                                     <Fab
                                         disableFocusRipple
@@ -101,8 +105,8 @@ const JogsPage = ({ filterInterval }: { filterInterval: filterIntervalInterface 
                                             <b>+</b>
                                         </Typography>
                                     </Fab>
-                                </Zoom>
-                            </div>
+                                </Box>
+                            </Zoom>
                         )}
                     </>
                 )}

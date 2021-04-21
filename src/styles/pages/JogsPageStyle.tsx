@@ -10,12 +10,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    addJogButton: {
-        height: '60px',
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'flex-end',
-    },
     fab: {
         border: '5px solid',
         borderColor: theme.palette.primary.main,
