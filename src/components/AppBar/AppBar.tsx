@@ -33,16 +33,19 @@ const AppBar = (props: {
             // set initial state
             setShowMenu(false);
             setShowFilterBar(false);
+            props.setFilterInterval({ dateFrom: '', dateTo: '' });
             setActivePage('/jogs');
         }
         switch (location.pathname) {
             case '/jogs/add': {
                 setShowFilterBar(false);
+                props.setFilterInterval({ dateFrom: '', dateTo: '' });
                 setActivePage('');
                 break;
             }
             case '/jogs/edit': {
                 setShowFilterBar(false);
+                props.setFilterInterval({ dateFrom: '', dateTo: '' });
                 setActivePage('');
                 break;
             }
@@ -52,6 +55,7 @@ const AppBar = (props: {
             }
             case '/info': {
                 setShowFilterBar(false);
+                props.setFilterInterval({ dateFrom: '', dateTo: '' });
                 break;
             }
             case '/contactus': {
@@ -76,8 +80,8 @@ const AppBar = (props: {
     };
 
     const handleChangeActivePage = (event: React.SyntheticEvent<Element, Event>, page: PagesInterface) => {
-        history.push(page);
         props.setFilterInterval({ dateFrom: '', dateTo: '' });
+        history.push(page);
         setActivePage(page);
     };
 

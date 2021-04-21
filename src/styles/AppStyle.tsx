@@ -33,7 +33,7 @@ export const useStyles = makeStyles(() =>
                 },
 
                 '&:vertical': {
-                    background: 'transparent',
+                    background: '#dedede',
                 },
             },
         },

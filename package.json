@@ -7,6 +7,9 @@
     "@emotion/styled": "latest",
     "@material-ui/core": "^5.0.0-alpha.31",
     "@material-ui/icons": "latest",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
+    "path": "^0.12.7",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",
@@ -32,7 +35,7 @@
     "prettier": "latest"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "build": "set \"CI=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
