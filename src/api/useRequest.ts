@@ -5,6 +5,7 @@ import { BasicJogListResponseInterface } from '../interfaces/BasicJogListRespons
 
 const { REACT_APP_API_URL, REACT_APP_GET_TOKEN, REACT_APP_GET_ALL_DATA, REACT_APP_ADD_NEW_DATA } = process.env;
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function useRequest() {
     /**
      * Authenticate user using token

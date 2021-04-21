@@ -1,4 +1,8 @@
-export function dateFormatter() {
+export function dateFormatter(): {
+    FromUnixToString: (date: number | string | any) => string;
+    FromStringToDate: (date: string) => Date | string;
+    FromStringToUnix: (date: string) => number | string;
+} {
     /**
      * Formats date from UNIX format to normal view 31.12.1970
      * @param date: number | string | any
