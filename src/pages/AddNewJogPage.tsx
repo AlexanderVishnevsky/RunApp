@@ -7,12 +7,13 @@ import { BasicJogListResponseInterface } from '../interfaces/BasicJogListRespons
 import { dateFormatter } from '../api/dateFormatter';
 import SubmitButton from '../components/common/SubmitButton';
 import { RequestStateInterface } from '../interfaces/RequestStateInterface';
-import { AppViewInterface } from '../interfaces/AppViewInterface';
+import { useApplicationLayout } from '../api/useApplicationLayout';
 
-const AddNewJogPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
+const AddNewJogPage = (): JSX.Element => {
     const classes = useStyles();
     const history = useHistory();
     const { addData } = useRequest();
+    const appView = useApplicationLayout();
 
     const [inputsState, setInputsState] = React.useState<BasicJogListResponseInterface>({
         distance: 0,

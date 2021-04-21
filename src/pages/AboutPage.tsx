@@ -1,10 +1,11 @@
 import { Grow, Typography } from '@material-ui/core';
 import React from 'react';
 import { useStyles } from '../styles/pages/AuthPageStyle';
-import { AppViewInterface } from '../interfaces/AppViewInterface';
+import { useApplicationLayout } from '../api/useApplicationLayout';
 
-const AboutPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
+const AboutPage = (): JSX.Element => {
     const classes = useStyles();
+    const appView = useApplicationLayout();
     return (
         <Grow in={true} {...{ timeout: 500 }}>
             <div className={classes.root}>

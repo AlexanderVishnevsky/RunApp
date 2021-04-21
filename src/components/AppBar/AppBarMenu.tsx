@@ -4,19 +4,17 @@ import { PagesInterface } from '../../interfaces/PagesInterface';
 import { AntTab, AntTabs } from '../../styles/AppBar/AppBarMenuStyle';
 import { FilterIcon } from '../../static/FilterIcon';
 import { useLocation } from 'react-router-dom';
-import { AppViewInterface } from '../../interfaces/AppViewInterface';
 import { MenuIcon } from '../../static/MenuIcon';
 import MobileMenu from './MobileMenu';
+import { useApplicationLayout } from '../../api/useApplicationLayout';
 
 const AppBarMenu = ({
-    appView,
     activePage,
     handleChangeActivePage,
     handleToggleFilterBar,
     isShowMobileMenu,
     handleToggleMobileMenu,
 }: {
-    appView: AppViewInterface;
     activePage: PagesInterface;
     handleChangeActivePage: (event: SyntheticEvent<Element, Event>, page: PagesInterface) => void;
     handleToggleFilterBar: () => void;
@@ -24,6 +22,7 @@ const AppBarMenu = ({
     handleToggleMobileMenu: () => void;
 }): JSX.Element => {
     const location = useLocation();
+    const appView = useApplicationLayout();
     return (
         <div style={{ display: 'flex' }}>
             {appView === 'desktop' && (
