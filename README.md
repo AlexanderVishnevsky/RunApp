@@ -52,7 +52,7 @@ npm run start
 -   Filtering jogs by date
 
 ## What can be improved 📈
-
+-   [X] Tests 😎
 -   [ ] Session TOKEN expiration mechanism
 -   [ ] Filter by partial match
 -   [ ] Strict date validation
@@ -69,6 +69,5 @@ npm run start
 ## Won't done 🙅‍♂️
 
 -   Pure CSS styling
--   Tests 😥
 
 </div>
