@@ -6,8 +6,10 @@ import { RequestStateInterface } from './RequestStateInterface';
 export interface HandleJogDialogInterface {
     inputsState: BasicJogListResponseInterface | JogListResponseInterface;
     setInputsState:
-        | Dispatch<SetStateAction<JogListResponseInterface>>
-        | Dispatch<SetStateAction<BasicJogListResponseInterface>>;
+        | Dispatch<SetStateAction<any>>
+        | Dispatch<
+              SetStateAction<{ distance: number; time: number; date: string | number; id?: number; user_id?: string }>
+          >;
     processRequestState: RequestStateInterface;
     handleSubmitAction: () => void;
 }
