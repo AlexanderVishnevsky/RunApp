@@ -6,13 +6,14 @@ import { useRequest } from '../api/useRequest';
 import React from 'react';
 import SubmitButton from '../components/common/SubmitButton';
 import { RequestStateInterface } from '../interfaces/RequestStateInterface';
-import { AppViewInterface } from '../interfaces/AppViewInterface';
+import { useApplicationLayout } from '../api/useApplicationLayout';
 
-const AuthPage = ({ appView }: { appView: AppViewInterface }): JSX.Element => {
+const AuthPage = (): JSX.Element => {
     const classes = useStyles();
     const history = useHistory();
     const { auth } = useRequest();
     const theme = useTheme();
+    const appView = useApplicationLayout();
 
     const [processRequestState, setProcessRequestState] = React.useState<RequestStateInterface>('initial');
 

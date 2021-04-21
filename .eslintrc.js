@@ -28,6 +28,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'no-nested-ternary': 0, // ? ... : ... ? ... :
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
         'react/display-name': [0, { ignoreTranspilerName: true }],
     },
     globals: {

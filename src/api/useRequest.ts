@@ -2,8 +2,10 @@ import { loginConfigRequest } from './loginConfigRequest';
 import { LoginResponseInterface } from '../interfaces/LoginResponseInterface';
 import { JogListResponseInterface } from '../interfaces/JogListResponseInterface';
 import { BasicJogListResponseInterface } from '../interfaces/BasicJogListResponseInterface';
+
 const { REACT_APP_API_URL, REACT_APP_GET_TOKEN, REACT_APP_GET_ALL_DATA, REACT_APP_ADD_NEW_DATA } = process.env;
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function useRequest() {
     /**
      * Authenticate user using token

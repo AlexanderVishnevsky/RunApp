@@ -1,6 +1,5 @@
 import { LogoIcon } from '../../static/LogoIcon';
 import { useStyles } from '../../styles/AppBar/AppBarStyle';
-import { AppViewInterface } from '../../interfaces/AppViewInterface';
 import { PagesInterface } from '../../interfaces/PagesInterface';
 import AppBarMenu from './AppBarMenu';
 import React from 'react';
@@ -8,20 +7,20 @@ import FilterJogs from '../Jogs/FilterJogs';
 import { ButtonBase, Collapse } from '@material-ui/core';
 import { useHistory, useLocation } from 'react-router-dom';
 import { filterIntervalInterface } from '../../interfaces/filterIntervalInterface';
+import { useApplicationLayout } from '../../api/useApplicationLayout';
 
 const AppBar = (props: {
-    appView: AppViewInterface;
     filterInterval: filterIntervalInterface;
     setFilterInterval: React.Dispatch<React.SetStateAction<filterIntervalInterface>>;
 }): JSX.Element => {
     const classes = useStyles();
-    const { appView } = props;
     const [showFilterBar, setShowFilterBar] = React.useState(false);
     const [activePage, setActivePage] = React.useState<PagesInterface>('/jogs');
     const history = useHistory();
     const location = useLocation();
     const [isShowMenu, setShowMenu] = React.useState(false);
     const [isShowMobileMenu, setIsShowMobileMenu] = React.useState(false);
+    const appView = useApplicationLayout();
 
     /**
      * Check what to show
@@ -92,7 +91,6 @@ const AppBar = (props: {
                     <LogoIcon />
                 </ButtonBase>
                 <AppBarMenu
-                    appView={appView}
                     activePage={activePage}
                     handleChangeActivePage={handleChangeActivePage}
                     handleToggleFilterBar={handleToggleFilterBar}
